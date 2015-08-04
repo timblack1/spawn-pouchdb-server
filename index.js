@@ -50,6 +50,7 @@ function spawnPouchdbServer (options, callback) {
     })
 
     pouchDbServer.stdout.on('data', function (data) {
+      console.log(data.toString())
       if (/navigate to .* for the Fauxton UI/.test(data)) {
         callback(null, pouchDbServer)
       }
