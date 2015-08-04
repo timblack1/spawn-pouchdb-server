@@ -4,9 +4,9 @@ var exec = require('child_process').exec
 var rimraf = require('rimraf')
 var path = require('path')
 
-function cleanup (t, pid, databaseDir) {
-  if (databaseDir) {
-    rimraf.sync(path.resolve(process.cwd(), databaseDir))
+function cleanup (t, pid, directory) {
+  if (directory) {
+    rimraf.sync(path.resolve(process.cwd(), directory))
   }
 
   lookup(pid, function (error, pidFound) {
